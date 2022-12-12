@@ -13,5 +13,34 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-segment [value]="activeSegment" (ionChange)="onSegmentChange($event)">
+    <ion-segment-button value="first">
+      <ion-label>
+        First
+      </ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="second">
+      <ion-label>
+        Second
+      </ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="third">
+      <ion-label>
+        Third
+      </ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div class="swipe-container" (scroll)="onScroll($event)" #swipeContainer>
+    <div class=" page">
+      <ion-label>Page 1</ion-label>
+    </div>
+    <div class="page">
+      <ion-label>Page 2</ion-label>
+    </div>
+    <div class="page">
+      <ion-label>Page 3</ion-label>
+    </div>
+  </div>
+
 </ion-content>
